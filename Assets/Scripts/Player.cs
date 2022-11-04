@@ -32,9 +32,12 @@ public class Player : MonoBehaviour
     }
 
 
+    //unity callback function that it decides to call whenever we hit smth
 
-
-    
+    void OnCollisionEnter2D()
+    {
+        FindObjectOfType<GameManager>().EndGame();
+    }
 
 
 
