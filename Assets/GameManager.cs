@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowness;
 
         // after 1 sec
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
