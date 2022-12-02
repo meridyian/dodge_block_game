@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
+  
     public float speed = 15f;
     public float mapWidth = 5f;
     private Rigidbody2D rb;
+
+    
 
     void Start()
     {
@@ -36,6 +39,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
+        
         FindObjectOfType<GameManager>().EndGame();
     }
 
