@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f / slowness);
 
         Time.timeScale = 1f;
-
+        Time.fixedDeltaTime = Time.fixedDeltaTime * slowness;
 
 
         // after 1 sec
