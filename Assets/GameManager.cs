@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Block block;
-
+    public Player playerScript;
     public Canvas deathCanvas;
     public Canvas scoreCanvas;
 
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Text totalScore;
 
     // to give slowmotion effect
-    public float slowness = 10f;
+
     public GameObject player;
 
     public void Update()
@@ -30,26 +30,11 @@ public class GameManager : MonoBehaviour
  
         scoreCanvas.gameObject.SetActive(false);
         deathCanvas.gameObject.SetActive(true);
-        StartCoroutine(RestartLevel());
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = Time.fixedDeltaTime * playerScript.slowness;
         player.gameObject.SetActive(false);
     }
 
-
-
-    IEnumerator RestartLevel()
-    {
-        Time.timeScale = 1f / slowness;
-        Time.fixedDeltaTime = Time.fixedDeltaTime / slowness;
-
-        yield return new WaitForSeconds(1f / slowness);
-
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = Time.fixedDeltaTime * slowness;
-
-
-        // after 1 sec
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 
 
 }

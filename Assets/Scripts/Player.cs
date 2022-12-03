@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float mapWidth = 5f;
     private Rigidbody2D rb;
 
-    
+    public float slowness = 10f;
 
     void Start()
     {
@@ -39,7 +39,8 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
-        
+        Time.timeScale = 1f / slowness;
+        Time.fixedDeltaTime = Time.fixedDeltaTime / slowness;
         FindObjectOfType<GameManager>().EndGame();
     }
 

@@ -686,11 +686,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: -5665589721369014203, guid: 7697e8b27d8a34f88b162bbcb13ed5c0, type: 3}
+  playerScript: {fileID: 512907962}
   deathCanvas: {fileID: 399864634}
   scoreCanvas: {fileID: 1166986100}
   currentScore: {fileID: 1281389508}
   totalScore: {fileID: 1714319097}
-  slowness: 15
   player: {fileID: 512907958}
 --- !u!4 &420085812
 Transform:
@@ -860,6 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   mapWidth: 5
+  slowness: 10
 --- !u!61 &512907963
 BoxCollider2D:
   m_ObjectHideFlags: 0
